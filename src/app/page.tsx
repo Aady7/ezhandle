@@ -1,103 +1,133 @@
-import Image from "next/image";
+'use client';
 
-export default function Home() {
+import Link from 'next/link';
+import { useState } from 'react';
+
+export default function HomePage() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white dark:from-gray-900 dark:to-gray-800">
+      {/* Navigation Bar */}
+      <nav className="bg-white shadow-md dark:bg-gray-800">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between h-16">
+            <div className="flex items-center">
+              <h1 className="text-2xl font-bold text-blue-600 dark:text-blue-400">EZhandle</h1>
+            </div>
+            <div className="hidden md:flex items-center space-x-4">
+              <Link href="/login" className="text-gray-600 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400">
+                Login
+              </Link>
+              <Link href="/register" className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700">
+                Get Started
+              </Link>
+            </div>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      </nav>
+
+      {/* Hero Section */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div className="text-center">
+          <h2 className="text-4xl font-bold text-gray-900 dark:text-white sm:text-5xl md:text-6xl">
+            Modern Library Management
+            <span className="block text-blue-600 dark:text-blue-400">Made Simple</span>
+          </h2>
+          <p className="mt-3 max-w-md mx-auto text-base text-gray-500 dark:text-gray-300 sm:text-lg md:mt-5 md:text-xl md:max-w-3xl">
+            Streamline your library operations, track student attendance, and manage resources efficiently.
+          </p>
+        </div>
+
+        {/* Feature Cards */}
+        <div className="mt-16 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {/* Student Management */}
+          <div className="p-6 bg-white dark:bg-gray-800 rounded-lg shadow-lg">
+            <div className="text-blue-600 dark:text-blue-400 text-2xl mb-4">👥</div>
+            <h3 className="text-lg font-medium text-gray-900 dark:text-white">Student Management</h3>
+            <p className="mt-2 text-gray-500 dark:text-gray-300">
+              Track attendance, manage memberships, and monitor study patterns.
+            </p>
+          </div>
+
+          {/* Resource Tracking */}
+          <div className="p-6 bg-white dark:bg-gray-800 rounded-lg shadow-lg">
+            <div className="text-blue-600 dark:text-blue-400 text-2xl mb-4">📚</div>
+            <h3 className="text-lg font-medium text-gray-900 dark:text-white">Resource Tracking</h3>
+            <p className="mt-2 text-gray-500 dark:text-gray-300">
+              Monitor books, study materials, and seating availability in real-time.
+            </p>
+          </div>
+
+          {/* Analytics */}
+          <div className="p-6 bg-white dark:bg-gray-800 rounded-lg shadow-lg">
+            <div className="text-blue-600 dark:text-blue-400 text-2xl mb-4">📊</div>
+            <h3 className="text-lg font-medium text-gray-900 dark:text-white">Analytics</h3>
+            <p className="mt-2 text-gray-500 dark:text-gray-300">
+              Get insights on library usage, popular times, and student performance.
+            </p>
+          </div>
+        </div>
+
+        {/* Statistics Section */}
+        <div className="mt-16">
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            <div className="bg-white dark:bg-gray-800 overflow-hidden shadow rounded-lg">
+              <div className="px-4 py-5 sm:p-6">
+                <dt className="text-sm font-medium text-gray-500 dark:text-gray-300 truncate">
+                  Total Students
+                </dt>
+                <dd className="mt-1 text-3xl font-semibold text-blue-600 dark:text-blue-400">
+                  500+
+                </dd>
+              </div>
+            </div>
+            <div className="bg-white dark:bg-gray-800 overflow-hidden shadow rounded-lg">
+              <div className="px-4 py-5 sm:p-6">
+                <dt className="text-sm font-medium text-gray-500 dark:text-gray-300 truncate">
+                  Daily Attendance
+                </dt>
+                <dd className="mt-1 text-3xl font-semibold text-blue-600 dark:text-blue-400">
+                  200+
+                </dd>
+              </div>
+            </div>
+            <div className="bg-white dark:bg-gray-800 overflow-hidden shadow rounded-lg">
+              <div className="px-4 py-5 sm:p-6">
+                <dt className="text-sm font-medium text-gray-500 dark:text-gray-300 truncate">
+                  Study Hours
+                </dt>
+                <dd className="mt-1 text-3xl font-semibold text-blue-600 dark:text-blue-400">
+                  12hrs
+                </dd>
+              </div>
+            </div>
+            <div className="bg-white dark:bg-gray-800 overflow-hidden shadow rounded-lg">
+              <div className="px-4 py-5 sm:p-6">
+                <dt className="text-sm font-medium text-gray-500 dark:text-gray-300 truncate">
+                  Satisfaction Rate
+                </dt>
+                <dd className="mt-1 text-3xl font-semibold text-blue-600 dark:text-blue-400">
+                  98%
+                </dd>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* CTA Section */}
+        <div className="mt-16 text-center">
+          <Link
+            href="/register"
+            className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 md:text-lg"
+          >
+            Start Managing Your Library
+          </Link>
+          <p className="mt-3 text-sm text-gray-500 dark:text-gray-300">
+            No credit card required • Free trial available
+          </p>
+        </div>
+      </div>
     </div>
   );
 }
