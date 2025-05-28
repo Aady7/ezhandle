@@ -38,84 +38,8 @@ export default function HomePage() {
             Streamline your library operations, track student attendance, and manage resources efficiently.
           </p>
         </div>
-
-        {/* Feature Cards */}
-        <div className="mt-16 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {/* Student Management */}
-          <div className="p-6 bg-white dark:bg-gray-800 rounded-lg shadow-lg">
-            <div className="text-blue-600 dark:text-blue-400 text-2xl mb-4">👥</div>
-            <h3 className="text-lg font-medium text-gray-900 dark:text-white">Student Management</h3>
-            <p className="mt-2 text-gray-500 dark:text-gray-300">
-              Track attendance, manage memberships, and monitor study patterns.
-            </p>
-          </div>
-
-          {/* Resource Tracking */}
-          <div className="p-6 bg-white dark:bg-gray-800 rounded-lg shadow-lg">
-            <div className="text-blue-600 dark:text-blue-400 text-2xl mb-4">📚</div>
-            <h3 className="text-lg font-medium text-gray-900 dark:text-white">Resource Tracking</h3>
-            <p className="mt-2 text-gray-500 dark:text-gray-300">
-              Monitor books, study materials, and seating availability in real-time.
-            </p>
-          </div>
-
-          {/* Analytics */}
-          <div className="p-6 bg-white dark:bg-gray-800 rounded-lg shadow-lg">
-            <div className="text-blue-600 dark:text-blue-400 text-2xl mb-4">📊</div>
-            <h3 className="text-lg font-medium text-gray-900 dark:text-white">Analytics</h3>
-            <p className="mt-2 text-gray-500 dark:text-gray-300">
-              Get insights on library usage, popular times, and student performance.
-            </p>
-          </div>
-        </div>
-
-        {/* Statistics Section */}
-        <div className="mt-16">
-          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            <div className="bg-white dark:bg-gray-800 overflow-hidden shadow rounded-lg">
-              <div className="px-4 py-5 sm:p-6">
-                <dt className="text-sm font-medium text-gray-500 dark:text-gray-300 truncate">
-                  Total Students
-                </dt>
-                <dd className="mt-1 text-3xl font-semibold text-blue-600 dark:text-blue-400">
-                  500+
-                </dd>
-              </div>
-            </div>
-            <div className="bg-white dark:bg-gray-800 overflow-hidden shadow rounded-lg">
-              <div className="px-4 py-5 sm:p-6">
-                <dt className="text-sm font-medium text-gray-500 dark:text-gray-300 truncate">
-                  Daily Attendance
-                </dt>
-                <dd className="mt-1 text-3xl font-semibold text-blue-600 dark:text-blue-400">
-                  200+
-                </dd>
-              </div>
-            </div>
-            <div className="bg-white dark:bg-gray-800 overflow-hidden shadow rounded-lg">
-              <div className="px-4 py-5 sm:p-6">
-                <dt className="text-sm font-medium text-gray-500 dark:text-gray-300 truncate">
-                  Study Hours
-                </dt>
-                <dd className="mt-1 text-3xl font-semibold text-blue-600 dark:text-blue-400">
-                  12hrs
-                </dd>
-              </div>
-            </div>
-            <div className="bg-white dark:bg-gray-800 overflow-hidden shadow rounded-lg">
-              <div className="px-4 py-5 sm:p-6">
-                <dt className="text-sm font-medium text-gray-500 dark:text-gray-300 truncate">
-                  Satisfaction Rate
-                </dt>
-                <dd className="mt-1 text-3xl font-semibold text-blue-600 dark:text-blue-400">
-                  98%
-                </dd>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* CTA Section */}
+          
+           {/* CTA Section */}
         <div className="mt-16 text-center">
           <Link
             href="/register"
@@ -127,6 +51,30 @@ export default function HomePage() {
             No credit card required • Free trial available
           </p>
         </div>
+
+        {/* Feature Cards */}
+        <div className="mt-16 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {/* Student Management */}
+          <div className="p-6 bg-white dark:bg-gray-800 rounded-lg shadow-lg">
+            <h3 className="text-lg font-medium text-gray-900 dark:text-white align-center">Key Feature</h3>
+            <ul>
+               <li>Track occupancy of seat</li>
+               <li></li>
+               <li></li>
+               <li></li>
+            </ul>
+    
+          </div>
+
+
+        
+        </div>
+
+
+
+    
+
+       
       </div>
     </div>
   );
