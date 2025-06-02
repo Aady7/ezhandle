@@ -9,8 +9,7 @@ export default function RegisterPage() {
     email: '',
     password: '',
     confirmPassword: '',
-    studentId: '',
-    course: '',
+    mobilenumber: '',
   });
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -70,45 +69,29 @@ export default function RegisterPage() {
                 id="email"
                 name="email"
                 type="email"
-                required
                 className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
-                placeholder="you@example.com"
+                placeholder="you@example.com(optional)"
                 value={formData.email}
                 onChange={handleChange}
               />
             </div>
 
             <div>
-              <label htmlFor="studentId" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
-                Student ID
+              <label htmlFor="mobilenumber" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
+                Mobile Number
               </label>
               <input
-                id="studentId"
-                name="studentId"
-                type="text"
+                id="mobilenumber"
+                name="mobilenumber"
+                type="number"
                 required
                 className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
-                placeholder="e.g., 2024001"
-                value={formData.studentId}
+                placeholder="+91"
+                value={formData.mobilenumber}
                 onChange={handleChange}
               />
             </div>
 
-            <div>
-              <label htmlFor="course" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
-                Course
-              </label>
-              <input
-                id="course"
-                name="course"
-                type="text"
-                required
-                className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
-                placeholder="e.g., Computer Science"
-                value={formData.course}
-                onChange={handleChange}
-              />
-            </div>
 
             <div>
               <label htmlFor="password" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
